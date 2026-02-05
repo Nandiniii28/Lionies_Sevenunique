@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './layout.jsx'  
 import Home from './pages/Home'
 import Cart from './pages/Cart.jsx'
+import './index.css'
 
 function App() {
   return (
