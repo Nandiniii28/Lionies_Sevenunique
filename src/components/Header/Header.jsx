@@ -25,7 +25,7 @@ export default function Header() {
           
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-gray-900 tracking-tight">
-            max
+            LIONIES 
           </Link>
 
           {/* Search Bar */}
