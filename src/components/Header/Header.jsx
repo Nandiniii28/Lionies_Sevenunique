@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FiTruck,
   FiRotateCcw,
   FiGift,
   FiHeart,
-  FiShoppingBag,
-  FiMoreVertical,
   FiMapPin,
 } from "react-icons/fi";
+import { LuLogIn } from "react-icons/lu";
+
+import CartTrigger from "./CartTrigger";
+import CartOffCanvas from "./CartOffCanvas";
+import LoginModal from "./Login";
+
 
 export default function Header() {
+  const [cartOpen, setCartOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+
+
   return (
     <>
       <header className="w-full border-b border-gray-200">
@@ -54,24 +62,36 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-6 text-sm">
-            <Link className="flex flex-col items-center">
-              <FiHeart size={18} />
-              <span>Favourites</span>
-            </Link>
+  <Link className="flex flex-col items-center ">
+    <FiHeart size={18} />
+    <span>Wishlist</span>
+  </Link>
 
-            <Link className="flex flex-col items-center relative">
-              <FiShoppingBag size={18} />
-              <span>Basket</span>
-              <span className="absolute -top-1 right-0 bg-orange-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
-                1
-              </span>
-            </Link>
+  {/* Cart Trigger */}
+  <CartTrigger onOpen={() => setCartOpen(true)} />
 
-            <Link className="flex flex-col items-center">
-              <FiMoreVertical size={18} />
-              <span>More</span>
-            </Link>
-          </div>
+ <button
+  onClick={() => setLoginOpen(true)}
+  className="flex flex-col items-center  cursor-pointer"
+>
+ <LuLogIn size={18} />
+    <span>Login</span>
+
+</button>
+
+</div>
+
+<CartOffCanvas
+  isOpen={cartOpen}
+  onClose={() => setCartOpen(false)}
+/>
+
+<LoginModal
+  isOpen={loginOpen}
+  onClose={() => setLoginOpen(false)}
+/>
+
+
         </div>
 
         <div className="flex justify-center gap-10 py-4 border-t border-gray-100 text-sm">
@@ -102,7 +122,11 @@ export default function Header() {
             <span className="mx-12">Shop Our Exclusive Dress Collection</span>
           </div>
         </div>
+
+
       </header>
+
+      
     </>
   );
 }
