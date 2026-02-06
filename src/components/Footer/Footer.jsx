@@ -14,9 +14,6 @@ export default function Footer() {
         {/* BLACK OVERLAY (only on background) */}
         <div className="absolute inset-0 rounded-lg bg-black/60"></div>
 
-
-
-
 <div className='absolute top-70 left-10'>
    <img
       src="/image/Mens-logo.PNG"
