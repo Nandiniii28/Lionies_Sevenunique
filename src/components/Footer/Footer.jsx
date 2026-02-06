@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <footer className="pt-16">
-      <div className="relative max-w-7xl mx-auto px-4 relative bg-[url('/image/footer-bg.jpg')] bg-cover bg-center w-full overflow-hidden">
+      <div className="relative  px-4  bg-[url('/image/footer-bg.jpg')] bg-cover bg-center w-full overflow-hidden">
 
         {/* BLACK OVERLAY (only on background) */}
         <div className="absolute inset-0 rounded-lg bg-black/60"></div>
@@ -103,7 +103,7 @@ export default function Footer() {
             <div className="lg:col-span-2 space-y-6">
 
               {/* Newsletter */}
-              <div className='bg-black p-4 rounded-lg'>
+              <div className='p-4 rounded-lg'>
                 <h3 className="text-2xl font-serif mb-4">
                   Join Our News Letter
                 </h3>
