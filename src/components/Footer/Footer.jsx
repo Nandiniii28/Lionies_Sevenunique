@@ -116,7 +116,7 @@ export default function Footer() {
 
               {/* Image */}
               <img
-                src="/image/footer-img.jpeg"
+                src="/images/all.webp"
                 alt="Model"
                 className="w-full object-cover"
               />

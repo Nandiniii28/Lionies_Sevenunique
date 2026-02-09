@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-// Banner Data
+
 const banners = [
     {
         id: 1,
@@ -48,7 +48,7 @@ const banners = [
 
 export default function HeroBanner() {
     return (
-        <section className=" h-[60vh]  z-10 overflow-hidden">
+        <section className=" h-[70vh]  z-10 overflow-hidden">
             <Swiper
                 modules={[Autoplay, Navigation, EffectFade]}
                 effect="fade"
@@ -78,7 +78,7 @@ export default function HeroBanner() {
                             <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/40 to-black/50" />
 
                             <div className="relative z-20 w-full max-w-5xl mx-auto px-4 md:px-8 lg:px-16 text-center text-white py-12">
-                                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mb-8 drop-shadow-2xl bg-gradient-to-r from-white via-white/90 to-yellow-200/90 bg-clip-text text-transparent">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none mb-8 drop-shadow-2xl bg-linear-to-r from-white via-white/90 to-yellow-200/90 bg-clip-text text-transparent">
                                     {banner.title}
                                 </h1>
 
