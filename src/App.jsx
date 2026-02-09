@@ -7,6 +7,8 @@ import TermsConditions from './pages/Terms.jsx'
 import RefundPolicy from './pages/Refund.jsx'
 import CartOffCanvas from './components/Header/CartOffCanvas.jsx'
 import LoginModal from './components/Header/Login.jsx'
+import UserProfilePage from './pages/Userprofile.jsx'
+import Wishlist from './pages/Wishlist.jsx'
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="cart" element={<CartOffCanvas />} />
-         <Route path="cart" element={<LoginModal />} />
+         <Route path="login" element={<LoginModal />} />
+                  <Route path="userprofile" element={<UserProfilePage />} />
+ <Route path="wishlist" element={<Wishlist />} />
         <Route path="privacy" element={<PrivacyPolicy />} />
                 <Route path="terms" element={<TermsConditions />} />
                                 <Route path="refund" element={<RefundPolicy />} />

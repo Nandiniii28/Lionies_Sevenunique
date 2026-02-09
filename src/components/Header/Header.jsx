@@ -8,7 +8,7 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 import { LuLogIn } from "react-icons/lu";
-
+import { IoPerson } from "react-icons/io5";
 import CartTrigger from "./CartTrigger";
 import CartOffCanvas from "./CartOffCanvas";
 import LoginModal from "./Login";
@@ -62,37 +62,42 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-6 text-sm">
-  <Link className="flex flex-col items-center ">
-    <FiHeart size={18} />
-    <span>Wishlist</span>
-  </Link>
+            <Link to="/wishlist" className="flex flex-col items-center ">
+              <FiHeart size={18} />
+              <span>Wishlist</span>
+            </Link>
 
-  {/* Cart Trigger */}
-  <CartTrigger onOpen={() => setCartOpen(true)} />
+            {/* Cart Trigger */}
+            <CartTrigger onOpen={() => setCartOpen(true)} />
 
- <button
-  onClick={() => setLoginOpen(true)}
-  className="flex flex-col items-center  cursor-pointer"
->
- <LuLogIn size={18} />
-    <span>Login</span>
+            <button
+              onClick={() => setLoginOpen(true)}
+              className="flex flex-col items-center  cursor-pointer"
+            >
+              <LuLogIn size={18} />
+              <span>Login</span>
 
-</button>
+            </button>
 
-</div>
+            <Link to="/userprofile" className="flex flex-col items-center bg-[#f5f0dd] text-[#927f68] p-3 rounded-full cursor-pointer">
+              <IoPerson size={28} />
+            </Link>
 
-<CartOffCanvas
-  isOpen={cartOpen}
-  onClose={() => setCartOpen(false)}
-/>
+          </div>
 
-<LoginModal
-  isOpen={loginOpen}
-  onClose={() => setLoginOpen(false)}
-/>
+          <CartOffCanvas
+            isOpen={cartOpen}
+            onClose={() => setCartOpen(false)}
+          />
+
+          <LoginModal
+            isOpen={loginOpen}
+            onClose={() => setLoginOpen(false)}
+          />
 
 
         </div>
+
 
         <div className="flex justify-center gap-10 py-4 border-t border-gray-100 text-sm">
           {["Polo Shop", "GenZ Store", "Women", "Men", "Kids", "Max Sport"].map(
@@ -126,7 +131,7 @@ export default function Header() {
 
       </header>
 
-      
+
     </>
   );
 }
