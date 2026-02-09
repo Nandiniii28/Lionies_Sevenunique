@@ -8,73 +8,68 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="pt-16">
-      <div className="relative  px-4  bg-[url('/image/footer-bg.jpg')] bg-cover bg-center w-full overflow-hidden">
+    <footer className="">
+      <div className="relative  px-4  bg-[url('/image/footer-img2.jpeg')] bg-cover bg-center w-full overflow-hidden">
 
-        {/* BLACK OVERLAY (only on background) */}
-        <div className="absolute inset-0 rounded-lg bg-black/60"></div>
+        <div className="absolute inset-0 rounded-lg bg-black/70"></div>
 
-<div className='absolute top-70 left-10'>
-   <img
-      src="/image/Mens-logo.PNG"
-      alt="Model"
-      className="w-50 object-cover "
-    />
- 
-</div>
+        <div className='absolute top-70 left-10'>
+          <img
+            src="/image/Mens-logo.PNG"
+            alt="Model"
+            className="w-50 object-cover "
+          />
+
+        </div>
 
 
         <div className="relative z-10 px-8 py-12">
-
-          {/* TOP ROW */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 text-[#f5efdd]">
 
-            {/* CONTACT */}
-           <div className="lg:col-span-1">
-  <h4 className="mb-4 font-semibold">Contact Us</h4>
+            <div className="lg:col-span-1">
+              <h4 className="mb-4 font-semibold">Contact Us</h4>
 
-  <ul className="space-y-4 text-sm text-[#f5efdd]">
-    <li className="flex items-center gap-3">
-      <FiPhone className="text-lg" />
-      <a href="tel:+00123456789" className="hover:text-white transition">
-        +00 12 34 56 789
-      </a>
-    </li>
+              <ul className="space-y-4 text-sm text-[#f5efdd]">
+                <li className="flex items-center gap-3">
+                  <FiPhone className="text-lg" />
+                  <a href="tel:+00123456789" className="hover:text-white transition">
+                    +00 12 34 56 789
+                  </a>
+                </li>
 
-    <li className="flex items-center gap-3">
-      <FiMail className="text-lg" />
-      <a
-        href="mailto:contact@lionies.com"
-        className="hover:text-white transition"
-      >
-        contact@lionies.com
-      </a>
-    </li>
-  </ul>
+                <li className="flex items-center gap-3">
+                  <FiMail className="text-lg" />
+                  <a
+                    href="mailto:contact@lionies.com"
+                    className="hover:text-white transition"
+                  >
+                    contact@lionies.com
+                  </a>
+                </li>
+              </ul>
 
-  {/* SOCIAL LINKS */}
-   <h4 className="my-4 font-semibold">Social Links</h4>
-  <div className="flex gap-4 mt-6 text-[#f5efdd]">
-    <a href="#" className="hover:text-white transition">
-      <FaInstagram />
-    </a>
+              {/* SOCIAL LINKS */}
+              <h4 className="my-4 font-semibold">Social Links</h4>
+              <div className="flex gap-4 mt-6 text-[#f5efdd]">
+                <a href="#" className="hover:text-white transition">
+                  <FaInstagram />
+                </a>
 
-    <a href="#" className="hover:text-white transition">
-      <FaLinkedinIn />
-    </a>
+                <a href="#" className="hover:text-white transition">
+                  <FaLinkedinIn />
+                </a>
 
-    <a href="#" className="hover:text-white transition">
-      <FaGithub />
-    </a>
+                <a href="#" className="hover:text-white transition">
+                  <FaGithub />
+                </a>
 
-    <a href="#" className="hover:text-white transition">
-      <FaXTwitter />
-    </a>
-  </div>
-</div>
+                <a href="#" className="hover:text-white transition">
+                  <FaXTwitter />
+                </a>
+              </div>
+            </div>
 
 
-            {/* RESOURCES */}
             <div className="lg:col-span-1">
               <h4 className="mb-4 font-semibold">Quick Links</h4>
               <ul className="space-y-3 text-sm">
@@ -96,7 +91,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* NEWSLETTER + IMAGE (2 columns wide) */}
+         
             <div className="lg:col-span-2 space-y-6">
 
               {/* Newsletter */}

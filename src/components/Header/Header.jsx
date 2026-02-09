@@ -8,8 +8,12 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 import { LuLogIn } from "react-icons/lu";
+<<<<<<< HEAD
+import { IoPerson } from "react-icons/io5";
+=======
 import { X } from "lucide-react";
 
+>>>>>>> 3674732663580a9dfb164636b8f48c56ec1b7169
 import CartTrigger from "./CartTrigger";
 import CartOffCanvas from "./CartOffCanvas";
 import LoginModal from "./Login";

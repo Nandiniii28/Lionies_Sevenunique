@@ -28,18 +28,31 @@ export default function CartOffCanvas({ isOpen, onClose }) {
   };
 
 
-
-
-
   const subtotal = cartItems.reduce(
-  (sum, item) => sum + item.price * item.qty,
-  0
-);
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
 
-const discount = 500;
-const total = subtotal - discount;
+  const discount = 500;
+  const total = subtotal - discount;
 
+  const increaseQty = (id) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, qty: item.qty + 1 } : item
+      )
+    );
+  };
 
+  const decreaseQty = (id) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.id === id && item.qty > 1
+          ? { ...item, qty: item.qty - 1 }
+          : item
+      )
+    );
+  };
 
 
   return (
@@ -77,83 +90,98 @@ const total = subtotal - discount;
             </button>
           </div>
 
-          {/* Cart Items */}
-          <div className="max-w-5xl mx-auto px-6 py-6 space-y-4">
 
-            {/* Item */}
-         {cartItems.map((item) => (
-  <div
-    key={item.id}
-    className="flex gap-4 bg-gray-50 p-4 shadow-sm"
-  >
-    <img
-      src={item.image}
-      className="w-20 h-20 rounded-lg object-cover"
-      alt=""
-    />
+          <div className="max-w-6xl mx-auto px-6 py-6">
+            <div className="grid grid-cols-12 gap-6">
 
-    <div className="flex-1">
-      <h4 className="font-semibold text-gray-800">
-        {item.name}
-      </h4>
+              {/* LEFT SIDE – Cart Items (col-7) */}
+              <div className="col-span-12 lg:col-span-7 space-y-4">
+                {cartItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex gap-4 bg-gray-50 p-4 shadow-sm rounded-lg"
+                  >
+                    <img
+                      src={item.image}
+                      className="w-20 h-20 rounded-lg object-cover"
+                      alt=""
+                    />
 
-      <span className="inline-block mt-1 px-2 py-0.5 text-xs rounded-full bg-[#F5F0DD]">
-        {item.tag}
-      </span>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-gray-800">
+                        {item.name}
+                      </h4>
 
-      <div className="flex items-center gap-3 mt-3">
-        <button className="w-7 h-7 rounded-full border flex items-center justify-center">
-          <Minus size={14} />
-        </button>
+                      <span className="inline-block mt-1 px-2 py-0.5 text-xs rounded-full bg-[#F5F0DD]">
+                        {item.tag}
+                      </span>
 
-        <span className="font-medium">{item.qty}</span>
+                      <div className="flex items-center gap-3 mt-3">
+                        <button
+                          onClick={() => decreaseQty(item.id)}
+                          className="w-7 h-7 rounded-full border flex items-center justify-center hover:bg-gray-100"
+                        >
+                          <Minus size={14} />
+                        </button>
 
-        <button className="w-7 h-7 rounded-full border flex items-center justify-center">
-          <Plus size={14} />
-        </button>
-      </div>
-    </div>
+                        <span className="font-medium min-w-[20px] text-center">
+                          {item.qty}
+                        </span>
 
-    <div className="text-right">
-      <div className="font-semibold text-gray-800">
-        ₹{item.price}
-      </div>
+                        <button
+                          onClick={() => increaseQty(item.id)}
+                          className="w-7 h-7 rounded-full border flex items-center justify-center hover:bg-gray-100"
+                        >
+                          <Plus size={14} />
+                        </button>
+                      </div>
+                    </div>
 
-      <button
-        onClick={() => removeItem(item.id)}
-        className="text-xs text-red-500 mt-2 hover:underline"
-      >
-        Remove
-      </button>
-    </div>
-  </div>
-))}
+                    <div className="text-right">
+                      <div className="font-semibold text-gray-800">
+                        ₹{item.price * item.qty}
+                      </div>
 
-          </div>
-
-          {/* Sticky Summary */}
-          <div className="border-t border-gray-300 bg-white sticky bottom-0">
-            <div className="max-w-5xl mx-auto px-6 py-4 space-y-3">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Subtotal</span>
-               <span>₹{subtotal}</span>
+                      <button
+                        onClick={() => removeItem(item.id)}
+                        className="text-xs text-red-500 mt-2 hover:underline"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <div className="flex justify-between text-sm text-green-600">
-                <span>Discount</span>
-               <span>- ₹{discount}</span>
+              {/* RIGHT SIDE – Order Summary (col-5) */}
+              <div className="col-span-12 lg:col-span-5">
+                <div className="bg-white border border-gray-200 rounded-md shadow-sm p-6 sticky top-24 space-y-4">
+
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    Order Summary
+                  </h3>
+
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Subtotal</span>
+                    <span>₹{subtotal}</span>
+                  </div>
+
+                  <div className="flex justify-between text-sm text-green-600">
+                    <span>Discount</span>
+                    <span>- ₹{discount}</span>
+                  </div>
+
+                  <div className="border-t pt-3 flex justify-between text-lg font-semibold">
+                    <span>Total</span>
+                    <span>₹{total}</span>
+                  </div>
+
+                  <button className="w-full py-3 rounded-xl font-semibold text-white bg-[#927f68]">
+                    Proceed to Checkout
+                  </button>
+                </div>
               </div>
 
-              <div className="flex justify-between text-lg font-semibold">
-                <span>Total</span>
-               <span>₹{total}</span>
-              </div>
-
-              <button
-                className="w-full py-3 rounded-xl font-semibold text-white mt-3 bg-[#927f68]"
-              >
-                Proceed to Checkout
-              </button>
             </div>
           </div>
         </div>
