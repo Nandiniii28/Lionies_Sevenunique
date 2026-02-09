@@ -7,6 +7,8 @@ import TermsConditions from './pages/Terms.jsx'
 import RefundPolicy from './pages/Refund.jsx'
 import CartOffCanvas from './components/Header/CartOffCanvas.jsx'
 import LoginModal from './components/Header/Login.jsx'
+import ProductListingPage from './components/ProductListingPage.jsx'
+import CheckoutPage from './components/Checkout.jsx'
 
 function App() {
   return (
@@ -14,10 +16,12 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="cart" element={<CartOffCanvas />} />
-         <Route path="cart" element={<LoginModal />} />
+        <Route path="cart" element={<LoginModal />} />
+        <Route path="productlist" element={<ProductListingPage />} />
+        <Route path="checkout" element={<CheckoutPage />} />
         <Route path="privacy" element={<PrivacyPolicy />} />
-                <Route path="terms" element={<TermsConditions />} />
-                                <Route path="refund" element={<RefundPolicy />} />
+        <Route path="terms" element={<TermsConditions />} />
+        <Route path="refund" element={<RefundPolicy />} />
 
 
         <Route path="*" element={

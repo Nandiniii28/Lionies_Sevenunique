@@ -49,7 +49,6 @@ export default function CasualTrousers() {
     return (
         <section className="py-12 bg-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Casual Trousers</h2>
@@ -60,14 +59,11 @@ export default function CasualTrousers() {
                     </button>
                 </div>
 
-                {/* Grid with Hover Buttons */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {joggers.map((product) => (
                         <div key={product.id} className="group cursor-pointer">
                             <Link to={"#"} className="block bg-gray-50  overflow-hidden  transition-all duration-300">
-                                {/* Image Container */}
                                 <div className="relative h-full md:h-full">
-                                    {/* Discount Badge */}
                                     <div className="absolute top-0 left-0 z-20">
                                         <span 
                                             className="text-white text-xs px-2 py-1 font-bold" 
@@ -77,16 +73,13 @@ export default function CasualTrousers() {
                                         </span>
                                     </div>
 
-                                    {/* Product Image */}
                                     <img
                                         src={product.image}
                                         alt={product.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                     />
 
-                                    {/* Add to Cart + Quick View Buttons */}
                                     <div className="absolute top-3 right-[-80px] group-hover:right-3 transition-all duration-500 flex flex-col gap-1 z-30">
-                                        {/* Add to Cart Button */}
                                         <div className="relative group/cart">
                                             <div className="bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-colors duration-200">
                                                 <BsCart size={16} className="text-gray-800" />
@@ -96,7 +89,6 @@ export default function CasualTrousers() {
                                             </span>
                                         </div>
 
-                                        {/* Quick View Button */}
                                         <div className="relative group/qv">
                                             <div className="bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-colors duration-200">
                                                 <svg className="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +103,6 @@ export default function CasualTrousers() {
                                     </div>
                                 </div>
 
-                                {/* Product Info */}
                                 <div className="p-4 pt-2">
                                     <h3 className="font-semibold text-sm text-gray-900 mb-1 truncate">
                                         {product.name}

@@ -16,8 +16,6 @@ export default function PopularProducts() {
     <section className="pb-20 bg-gray-50">
 
       <div className="">
-      
-        {/* Image Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-10">
           {products.map((product) => (
             <div key={product.id} className="group cursor-pointer bg-white ">

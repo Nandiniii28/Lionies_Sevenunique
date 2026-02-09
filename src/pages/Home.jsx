@@ -7,6 +7,7 @@ import CategoriesSection from "../components/Home/CategoriesSection";
 import HoddiesSection from "../components/Home/HoddiesSection";
 import CasualTrousers from "../components/Home/CasualTrousers";
 import Blazercoat from "../components/Home/Blazercoat";
+import KurtaSets from "../components/Home/Kurtasets";
 export default function Home() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Home() {
       <HoddiesSection />
       <CasualTrousers />
       <Blazercoat />
+      <KurtaSets />
     </>
   )
 }

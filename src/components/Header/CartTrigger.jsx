@@ -7,7 +7,7 @@ export default function CartTrigger({ onOpen }) {
       className="flex flex-col items-center relative focus:outline-none  cursor-pointer"
     >
       <FiShoppingBag size={18} />
-         <span>Basket</span>
+         <span className="hidden sm:block lg:inline">Basket</span>
     </button>
   );
 }

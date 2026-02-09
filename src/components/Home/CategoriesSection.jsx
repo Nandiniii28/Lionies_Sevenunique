@@ -27,14 +27,12 @@ export default function CategoriesSection() {
             View All →
           </button>
         </div>
-        {/* 3x3 Grid - Exact Layout */}
         <div className="grid grid-cols-4 gap-1">
           {categories.map((category, index) => (
             <div
               key={category.id}
               className="group relative overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform duration-300"
             >
-              {/* Category Image */}
               <img
                 src={category.image}
                 alt={category.label}
