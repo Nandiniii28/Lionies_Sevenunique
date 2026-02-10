@@ -47,7 +47,7 @@ export default function UserProfilePage() {
         <div className="min-h-screen bg-[#f5f2e8] py-10">
             <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
                 {/* LEFT PROFILE */}
-                <div className="bg-white rounded-3xl h-[70vh] shadow-lg p-6 text-center border border-[#927f6830] sticky top-6">
+                <div className="bg-white rounded-3xl h-fit shadow-lg p-6 text-center border border-[#927f6830] sticky top-6">
 
                     <img
                         src="/image/avatar.jpg"

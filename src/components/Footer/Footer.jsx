@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
 
-        <div className="relative z-10 px-8 py-12">
+        <div className="relative z-10 px-8 pt-12">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 text-[#f5efdd]">
 
             <div className="lg:col-span-1">
@@ -126,7 +126,7 @@ export default function Footer() {
 
 
           {/* DIVIDER */}
-          <div className="border-t border-white/20 my-10"></div>
+          <div className="border-t border-white/20 mb-10"></div>
 
           {/* BOTTOM BAR */}
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-[#f5efdd] gap-4">
